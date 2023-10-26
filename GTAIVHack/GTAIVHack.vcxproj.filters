@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="EspSkeleton.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_dx9.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCamera.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="NativeContext3.cpp">
+      <Filter>NativeCall</Filter>
+    </ClCompile>
+    <ClCompile Include="NativeInvoke.cpp">
+      <Filter>NativeCall</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseHook.cpp">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTransform.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="Ped.cpp">
+      <Filter>Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="PedPool.cpp">
+      <Filter>Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_data.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_data_workshop.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_data_pool.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Camera.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="EspSkeleton.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>NativeCall</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Classess.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx9.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeContext.h">
+      <Filter>NativeCall</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeContext3.h">
+      <Filter>NativeCall</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeFunction.h">
+      <Filter>NativeCall</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeInvoke.h">
+      <Filter>NativeCall</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseHook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="offset.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="MyCamera.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTransform.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="Ped.h">
+      <Filter>Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="PedPool.h">
+      <Filter>Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_data.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_data_workshop.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="threadpool.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_data_pool.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="NativeCall">
+      <UniqueIdentifier>{edf9660b-ab6f-4022-8795-f662e2200199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{e3ac3e0d-f882-4c1b-b79e-83f2422ff3db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal">
+      <UniqueIdentifier>{dfdc83db-dbba-4926-bdfc-06bd0e7f21e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ESP">
+      <UniqueIdentifier>{7edc6c89-8226-4c96-915f-8fc7f9356dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{7db52e40-2463-4cdd-8692-b6214856f5f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global">
+      <UniqueIdentifier>{ebfc904d-a733-4600-ba6c-304f030261bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hook">
+      <UniqueIdentifier>{279df8d9-e654-46bc-8008-34e0510931d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
