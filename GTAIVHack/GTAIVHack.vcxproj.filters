@@ -63,13 +63,16 @@
     <ClCompile Include="Player.cpp">
       <Filter>Internal</Filter>
     </ClCompile>
-    <ClCompile Include="bone_data.cpp">
+    <ClCompile Include="render_data.cpp">
       <Filter>ESP</Filter>
     </ClCompile>
-    <ClCompile Include="bone_data_workshop.cpp">
+    <ClCompile Include="render_data_workshop.cpp">
       <Filter>ESP</Filter>
     </ClCompile>
-    <ClCompile Include="bone_data_pool.cpp">
+    <ClCompile Include="render_data_pool.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP_Render.cpp">
       <Filter>ESP</Filter>
     </ClCompile>
   </ItemGroup>
@@ -157,25 +160,25 @@
     <ClInclude Include="Player.h">
       <Filter>Internal</Filter>
     </ClInclude>
-    <ClInclude Include="bone_data.h">
+    <ClInclude Include="render_data.h">
       <Filter>ESP</Filter>
     </ClInclude>
-    <ClInclude Include="bone_data_workshop.h">
+    <ClInclude Include="render_data_workshop.h">
       <Filter>ESP</Filter>
     </ClInclude>
     <ClInclude Include="threadpool.h">
       <Filter>ESP</Filter>
     </ClInclude>
-    <ClInclude Include="bone_data_pool.h">
+    <ClInclude Include="render_data_pool.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="ESP_Render.h">
       <Filter>ESP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="NativeCall">
       <UniqueIdentifier>{edf9660b-ab6f-4022-8795-f662e2200199}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ImGui">
-      <UniqueIdentifier>{e3ac3e0d-f882-4c1b-b79e-83f2422ff3db}</UniqueIdentifier>
     </Filter>
     <Filter Include="Internal">
       <UniqueIdentifier>{dfdc83db-dbba-4926-bdfc-06bd0e7f21e6}</UniqueIdentifier>
@@ -191,6 +194,9 @@
     </Filter>
     <Filter Include="Hook">
       <UniqueIdentifier>{279df8d9-e654-46bc-8008-34e0510931d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{e3ac3e0d-f882-4c1b-b79e-83f2422ff3db}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

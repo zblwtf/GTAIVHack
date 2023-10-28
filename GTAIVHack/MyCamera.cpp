@@ -3,6 +3,7 @@
 #include "global.h"
 #include "Camera.h"
 #include <corecrt_math_defines.h>
+#include "offset.h"
 using namespace d3d9;
 using namespace ESP;
 float dtor(float d)
@@ -30,19 +31,46 @@ D3DXMATRIX MyCamera::getViewMatrix()
 void MyCamera::updateCameraVectors()
 {
 	Camera game_camera;
-	D3DXVECTOR3 camera_positon(0,0,0);
+	uintptr_t gtabase;
+	D3DXVECTOR3 camera_positon(0, 0, 0);
 	D3DXVECTOR3 camera_rotation(0, 0, 0);
-	game_camera.get_positon(camera_positon);
-
-	game_camera.get_rotation(camera_rotation);
 	
+	game_camera.get_positon(camera_positon);
 	//GTA的Y轴是前面 Z轴是上面 X轴是右边
 	//转换成左手手坐标系
 	Eye = D3DXVECTOR3(camera_positon.x, camera_positon.z, camera_positon.y);
 
+	if (module_base == NULL){
+		gtabase = (uintptr_t)GetModuleHandle(NULL);
+	}
+	else {
+		gtabase = module_base;
+	}
+
+
+	uintptr_t pcamera = READ_PTR(gtabase, offset::m_camera);
+
+	if (pcamera == NULL){
+		
+		
+		game_camera.get_rotation(camera_rotation);
+		pitch = dtor(camera_rotation.x);
+		yaw = M_PI_2 + dtor(camera_rotation.z);
+	}
+	else {
+		pitch = *(float*)(pcamera + offset::m_camera_pitch);
+		yaw = M_PI_2 +*(float*)(pcamera + offset::m_camera_yaw);
+	}
+	
+	
+
+
+	
+	
+	
+
 	//GTAIV 坐标系里面 yaw角与x垂直 且z才是yaw的分量
-	pitch = dtor(camera_rotation.x);
-	yaw = M_PI_2+ dtor(camera_rotation.z);
+	
 
 	
 

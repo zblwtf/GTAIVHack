@@ -8,7 +8,7 @@
 #include "Menu.h"
 #include "MouseHook.h"
 #include "EspSkeleton.h"
-
+#include "ESP_Render.h"
 
 using namespace Hook;
 d3d9Hook* m_d3d9Hook = nullptr;
@@ -21,12 +21,14 @@ extern LRESULT  ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wPara
 
 void Hook::clean_hook()
 {
-	
+	Sleep(2000);
 
 	if (Hook::m_pMouseHook) {
 		Hook::m_pMouseHook->set_end(true);
 	}
-	ESP::sp_myworkshop->stop();
+	
+
+	
 
 	if (window::m_oldproc) {
 		SetWindowLongPtr(window::m_hwindow, GWL_WNDPROC, (LONG_PTR)window::m_oldproc);
@@ -36,12 +38,9 @@ void Hook::clean_hook()
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();
 
-	/*if (NativeCall::ctx3) {
-		delete NativeCall::ctx3;
-		NativeCall::ctx3 = nullptr;
-	}*/
+	
 
-
+	
 	m_d3d9Hook->remove_d3d9hook();
 
 	if (m_d3d9Hook != nullptr)
@@ -63,11 +62,9 @@ void Hook::clean_hook()
 void  d3d9override::OnRender(ID3DDevice* pDevice)
 {
 	if (Hook::end) {
-
-		if (NativeCall::ctx3) {
-			delete NativeCall::ctx3;
-			NativeCall::ctx3 = nullptr;
-		}
+		
+		ESP_Render::Cleanup();
+		
 		return;
 	}
 
@@ -91,7 +88,15 @@ void  d3d9override::OnRender(ID3DDevice* pDevice)
 		io.IniFilename = NULL;
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 
-		ESP::sp_myworkshop->run();
+		if (ESP_Render::InitGeometry() != S_OK)
+		{
+			logstream << "[-]InitGeometry Failed\n";
+			logstream.flush();
+			Hook::end = true;
+		}
+
+		
+		
 
 		ImGui::StyleColorsDark();
 		io.Fonts->AddFontDefault();
@@ -112,13 +117,27 @@ void  d3d9override::OnRender(ID3DDevice* pDevice)
 		}
 
 
+		RECT rc{ 0 };
+		GetClientRect(window::m_hwindow, &rc);
 
+		//fWidth = 1600.0f;
+		//fHeight = 900.0f;
+		window::width = 1280;
+		window::height = 1024;
 
 
 		logstream << "[+] d3d9hookinited\n";
 		logstream.flush();
 		d3d9::d3d9hookinited = true;
 	}
+
+	GTAIV::Ped niko(2);
+	ESP::niko_pos = niko.get_position();
+
+	ESP::sp_myworkshop->GenerateTasks();
+	ESP::sp_myworkshop->start_working();
+
+
 	ImGui_ImplDX9_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();

@@ -6,7 +6,7 @@
 #include "Ped.h"
 #include "Player.h"
 #include "functions.h"
-#include "bone_data_pool.h"
+#include "render_data_pool.h"
 #include "global.h"
 #include "Hook.h"
 #include "MouseHook.h"
@@ -25,7 +25,7 @@ void hack_init()
     module_base = (uintptr_t)GetModuleHandleA(NULL);
    
     ESP::sp_bone_data_pool.reset(new bone_data_pool());
-    ESP::sp_myworkshop.reset(new bone_data_workshop(5));
+    ESP::sp_myworkshop.reset(new render_data_workshop(5));
 
 #pragma region init NativeCall 
     

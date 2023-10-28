@@ -141,6 +141,10 @@ PedType Ped::get_pedtype()
 }
 vec3 Ped::get_bonepositon(PedBone boneId)
 {
+
+	
+
+
 	vec3 m_bonePositon{ 0 };
 	Char::GetPedBonePosition(m_ped, (uint32_t)boneId, 0,0,0, &m_bonePositon);
 	return m_bonePositon;

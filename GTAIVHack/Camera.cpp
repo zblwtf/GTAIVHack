@@ -5,9 +5,9 @@
 Camera::Camera()
 {
 	camera_handle temp_handle;
-	NativeCall::Camera::GetGameCamChild(&temp_handle);
+	//NativeCall::Camera::GetGameCamChild(&temp_handle);
 	//NativeCall::Camera::GetRootCam(&temp_handle);
-	//NativeCall::Camera::GetGameCam(&temp_handle);
+	NativeCall::Camera::GetGameCam(&temp_handle);
 	this->m_handle = temp_handle;
 }
 Camera::~Camera()
@@ -42,14 +42,14 @@ bool Camera::get_rotation(D3DXVECTOR3& rotation)
 	}
 }
 
-bool Camera::get_fov(float& fov)
+bool Camera::get_fov(float* pfov)
 {
-	if (this->m_handle < 0) {
+	if (this->m_handle < 0 || pfov == nullptr) {
 		return false;
 	}
-	NativeCall::Camera::GetCamFov(this->m_handle, &fov);
+	NativeCall::Camera::GetCamFov(this->m_handle, pfov);
 
-	if (fov <= 0) {
+	if (*pfov <= 0) {
 		return false;
 	}
 	else {

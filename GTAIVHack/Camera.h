@@ -10,7 +10,7 @@ public:
 	~Camera();
 	bool get_positon(D3DXVECTOR3& positon);
 	bool get_rotation(D3DXVECTOR3& rotation);
-	bool get_fov(float& fov);
+	bool get_fov(float* fov);
 private:
 	
 	camera_handle m_handle;

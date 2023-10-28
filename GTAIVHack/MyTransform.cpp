@@ -4,8 +4,10 @@
 #include "MyTransform.h"
 #include "global.h"
 #include "MyCamera.h"
+#include "Camera.h"
 using namespace d3d9;
 using namespace GTAIV;
+
 
 void MyTransform::get_viewmatrix(D3DXMATRIX& ref_matrix)
 {
@@ -32,12 +34,22 @@ void MyTransform::get_projectmatrix(D3DXMATRIX& ref_matrix, const D3DVIEWPORT9& 
 {
 	
 
-	float FOV_rad = 70 * M_PI / 180.0f;
-	double aspect = viewport.Width / viewport.Height;
-	double FovAngleY = 2 * atan(tan(FOV_rad / (double)2.0) / aspect);
+	float fov = 70;
 	
 	
-	D3DXMatrixPerspectiveFovLH(&ref_matrix, FovAngleY, aspect, 0.01f, 100.0f);
+
+	float FOV_rad = fov  * M_PI / 180.0f;
+
+	float aspect = window::width / window::height;
+	float aspect_ = aspect + Menu::aspectcompensate;
+
+	float fovyAngle = 2 * atan(tan(FOV_rad / 2) / aspect_);
+
+	
+
+
+	
+	D3DXMatrixPerspectiveFovLH(&ref_matrix, fovyAngle, aspect, 0.01f, 100.0f);
 
 	
 	//XMMATRIX projectmatrix = XMMatrixPerspectiveFovLH(FovAngleY, aspect, 0.01f, 100.0f);

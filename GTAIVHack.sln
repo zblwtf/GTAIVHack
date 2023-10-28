@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTAIVHack", "GTAIVHack\GTAI
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Loader", "Loader\Loader.vcxproj", "{DF5441D4-4EFF-457A-9BC3-13B5658DF98A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectX9example", "DirectX9example\DirectX9example.vcxproj", "{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{DF5441D4-4EFF-457A-9BC3-13B5658DF98A}.Release|x64.Build.0 = Release|x64
 		{DF5441D4-4EFF-457A-9BC3-13B5658DF98A}.Release|x86.ActiveCfg = Release|Win32
 		{DF5441D4-4EFF-457A-9BC3-13B5658DF98A}.Release|x86.Build.0 = Release|Win32
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Debug|x64.ActiveCfg = Debug|x64
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Debug|x64.Build.0 = Debug|x64
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Debug|x86.ActiveCfg = Debug|Win32
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Debug|x86.Build.0 = Debug|Win32
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Release|x64.ActiveCfg = Release|x64
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Release|x64.Build.0 = Release|x64
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Release|x86.ActiveCfg = Release|Win32
+		{570FBC9E-58AE-4FFC-9206-CFB92E10B69D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

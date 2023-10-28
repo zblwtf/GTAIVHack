@@ -1,4 +1,4 @@
-#include "bone_data_pool.h"
+#include "render_data_pool.h"
 #include <iostream>
 #include <fstream>
 extern std::fstream logstream;
@@ -6,8 +6,8 @@ extern std::fstream logstream;
 bone_data_pool::bone_data_pool()
 {
 	this->m_cout = 0x200;
-	m_object = new bone_data[this->m_cout];
-	bone_data* ptr = m_object;
+	m_object = new render_data[this->m_cout];
+	render_data* ptr = m_object;
 	for (int i = 0; i < this->m_cout; i++)
 	{
 		ptr->set_index(i);
@@ -26,17 +26,16 @@ bone_data_pool::~bone_data_pool()
 		m_object = nullptr;
 	}
 }
-const bone_data& bone_data_pool::read_bone_data_from_index(int index) const
+render_data* bone_data_pool::read_bone_data_from_index(int index)
 {
 	if (index < 0 || index + 1 > this->m_cout)
-		return bone_data();
+		return &m_object[0];
 
-	return m_object[index];
+	return &m_object[index];
 }
-void bone_data_pool::set_bone_data_from_index(int index, bone_data&& data)
+void bone_data_pool::set_bone_data_from_index(int index, render_data&& data)
 {
 	if (index < 0 || index + 1 > this->m_cout)
 		return;
-
-	m_object[index] = std::move(data);
+	m_object[index].set_update_data(std::move(data));
 }

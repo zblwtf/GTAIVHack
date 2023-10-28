@@ -185,6 +185,7 @@ namespace GTAIV
 
 	enum
 	{
-		skeleton_pedbone_data_size = 23
+		skeleton_pedbone_data_size = 23,
+		cube_data_size = 13
 	};
 }

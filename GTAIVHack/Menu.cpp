@@ -39,18 +39,9 @@ void Menu::show_menu()
 		ImGui::Text("TraceLine");
 		
 		ImGui::Checkbox("trace_line", &Menu::b_renderTraceLine);
+		ImGui::Checkbox("skeleton_esp", &Menu::b_renderSkeleton);
 		
-		int health_niko = 0;
-		vec3 pos_niko{ 0 };
-		GTAIV::Ped pedniko(0);
 		
-		if (GTAIV::get_localplayer(&pedniko))
-		{
-			
-			pos_niko = pedniko.get_bonepositon(GTAIV::head);
-			ImGui::Text("bone_position: x:%0.2f\ty:%0.2f\tz:%0.2f", pos_niko.x, pos_niko.y, pos_niko.z);
-
-		}
 		 
 		
 
@@ -70,10 +61,16 @@ void Menu::show_menu()
 		ImGui::Text("camera_rotation: pitch:%0.2f\tyaw:%0.2f\troll:%0.2f", camera_rotation.x, camera_rotation.y, camera_rotation.z);
 		
 		
-		ImGui::ColorEdit4("Color:", m_traceColor);
-		ImGui::SliderFloat("Thick", &m_traceThick, 0.1f, 1.0f);
-		ImGui::SliderFloat3("scale", Menu::skeleton_scale, 1.0f, 2.0f);
+		ImGui::ColorEdit4("TraceColor:", m_traceColor);
+		ImGui::ColorEdit4("SkeletonColor", m_skeletonColor);
+		ImGui::ColorEdit4("CubeColor", m_cubeColor);
+
+		ImGui::SliderFloat("TraceThick", &m_traceThick, 0.1f, 5.0f);
+		ImGui::SliderFloat("CubeThick", &m_cubeThick, 0.1f, 5.0f);
+		ImGui::SliderFloat("aspectcompensate", &aspectcompensate, -1.0f, 1.0f);
 		
+		
+
 		ImGui::End();
 	}
 	

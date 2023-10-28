@@ -302,5 +302,10 @@ struct bone_t
 	vec3 to;
 };
 
+struct cube_t
+{
+	vec2 from;
+	vec2 to;
+};
 
 #define READ_PTR(base,offset) *(uintptr_t*)(base+offset)

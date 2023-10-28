@@ -142,7 +142,6 @@ bool PedPool::get_ListofHandle(std::vector<int32_t>& m_pedlist)
 			m_pedlist.push_back(val);
 		}
 	}
-	Menu::m_active_ped_count = m_pedlist.size();
 
 	return true;
 	
