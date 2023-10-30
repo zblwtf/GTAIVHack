@@ -3,7 +3,7 @@
 ---
 
 ## 项目介绍
-GTAIVHack是一个使用代理DLL与ScriptHook进行开发的项目。由于没有ScriptHook的lib文件，无法直接使用ScriptHook，因此通过生成一个ScriptHook的代理DLL来实现调用ScriptHook的功能。因此，该项目依赖一个代理DLL和ScriptHook，因此需要使用Loader DLL来先加载代理DLL，再加载项目的DLL。
+GTAIVHack是一个使用代理DLL与ScriptHook进行开发的项目。由于没有ScriptHook的lib文件，代码无法直接使用ScriptHook，因此通过生成一个ScriptHook的代理DLL来实现调用ScriptHook的功能。因此，该项目依赖一个代理DLL和ScriptHook，因此需要使用Loader DLL来先加载代理DLL，再加载项目的DLL。
 ## 实现的模块
 1. Skeleton ESP
 2. TranceLine
