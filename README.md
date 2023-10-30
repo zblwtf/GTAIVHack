@@ -8,7 +8,7 @@ GTAIVHack是一个使用代理DLL与ScriptHook进行交互的项目。由于没�
 ## 项目结构
 - GTAIVHack.dll：项目的核心DLL文件，通过Loader DLL加载。
 - Loader.dll：用于先加载代理DLL，然后再加载项目的DLL。
-- ScriptHook.dll：ScriptHook的代理DLL，用于与ScriptHook进行交互。
+- ProxyScriptHook.dll：ScriptHook的代理DLL，用于与ScriptHook进行交互。
 
 ## 依赖
 - ScriptHook.dll：通过Loader DLL加载ScriptHook的代理DLL。
