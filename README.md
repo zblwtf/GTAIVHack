@@ -19,7 +19,7 @@ GTAIVHack是一个使用代理DLL与ScriptHook进行开发且 只支持**Grand T
 
 ## 使用方法
 1. 使用Loader项目编译得到Loader.dll。
-2. 将ScriptHook.dll和Loader.dll放置在与GTAIVHack.dll同一目录下。
+2. 将ProxyScriptHook.dll和Loader.dll放置在与GTAIVHack.dll同一目录下。
 3. 使用Loader.dll加载GTAIVHack.dll，确保ScriptHook.dll被正确加载。
 4. 项目的DLL文件GTAIVHack.dll现在可以正常运行。
 
