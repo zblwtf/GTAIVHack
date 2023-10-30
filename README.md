@@ -20,7 +20,7 @@ GTAIVHack是一个使用代理DLL与ScriptHook进行开发且 只支持**Grand T
 ## 使用方法
 1. 使用Loader项目编译得到Loader.dll。
 2. 将ProxyScriptHook.dll和Loader.dll放置在与GTAIVHack.dll同一目录下。
-3. 使用[PowerSploit]()  Loader.dll加载GTAIVHack.dll，确保ScriptHook.dll被正确加载。
+3. 使用[PowerSploit](https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-DllInjection.ps1) 的Invoke-DllInject 加载 Loader.dll 在这之前确保ScriptHook.dll已经被正确加载。
 4. 项目的DLL文件GTAIVHack.dll现在可以正常运行。
 
 注意：由于代理DLL与普通的PE文件不同，无法使用PE加载技术。因此，需要通过调用Kernel32.dll的LoadLibrary函数来手动加载ScriptHook.dll的代理DLL。为了保证代码的正常工作，建议使用Loader.dll来先加载代理DLL，然后再加载项目的DLL。
