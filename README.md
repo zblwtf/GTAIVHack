@@ -1,0 +1,5 @@
+# GTAIVHack
+#该Dll需要用Loader项目编译后的Dll加载 因为我没有ScriptHook的lib文件导致我没有办法直接使用ScriptHook所以我通过生成一个ScriptHook的代理Dll 
+#这样我就能通过代理的Dll去调用ScriptHook里的东西,所以导致我的项目依赖一个代理dll 然后代理dll依赖ScriptHook 所以需要一个Loader dll 将代理dll先加载 
+#代理dll无法使用PE加载的相关技术，因为代理dll和普通的PE文件不一样所以 不能通过PE加载的相关技术 只能调用Kernel32.dll的 LoadLibrary 
+#所以想要代码工作起来，需要用一个先加载（也可以远程反射加载）Loader.dll 用它去调用LoadLibrary加载ScriptHook.dll的代理dll 然后再LoadLibrary 项目的dll
