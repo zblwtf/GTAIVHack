@@ -15,7 +15,7 @@ GTAIVHack是一个使用代理DLL与ScriptHook进行开发的项目。由于没�
 - ProxyScriptHook.dll：ScriptHook的代理DLL，用于与ScriptHook进行交互。
 
 ## 依赖
--  [ScriptHook](https://www.lcpdfr.com/downloads/gta4mods/g17media/26726-compatibility-patch-for-gta-iv-complete-edition/)   [download url](https://fileservice.gtainside.com/downloads/ftpl/1614788383_GTA%20IV%20Complete%20Edition%20ASI%20Loader%20plus%20ScriptHook.zip)
+-  [ScriptHook](https://www.lcpdfr.com/downloads/gta4mods/g17media/26726-compatibility-patch-for-gta-iv-complete-edition/)   [download](https://fileservice.gtainside.com/downloads/ftpl/1614788383_GTA%20IV%20Complete%20Edition%20ASI%20Loader%20plus%20ScriptHook.zip)
 
 ## 使用方法
 1. 使用Loader项目编译得到Loader.dll。
