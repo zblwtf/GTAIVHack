@@ -6,7 +6,7 @@
 GTAIVHack是一个使用代理DLL与ScriptHook进行开发且 只支持**Grand Theft Auto IV The Complete Edition**的项目。由于没有**ScriptHook.lib**文件，代码无法直接使用ScriptHook，因此通过生成一个ScriptHook的代理DLL来实现调用ScriptHook的功能。因此，该项目依赖一个代理DLL和ScriptHook.dll，因此需要使用Loader DLL来先加载代理DLL，再加载项目的DLL。
 ## 实现的模块
 1. Skeleton ESP
-2. TranceLine
+2. TraceLine
 3. 3DBox
 
 ## 项目结构
